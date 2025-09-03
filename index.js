@@ -1,15 +1,17 @@
-// index.js
 const express = require("express");
 const app = express();
+const path = require("path");
+
+// Render ka PORT environment se milega
 const PORT = process.env.PORT || 3000;
 
-// Home route
+// Public folder serve karne ke liye
+app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => {
-  res.send("✅ Trade Finder Clone live on Render!");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
-app.use(express.static("public"));
