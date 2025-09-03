@@ -1,108 +1,73 @@
 <!DOCTYPE html>
- lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trade Finder Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📊 Trade Finder Clone</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
     header {
-      background: #161616;
+      background: #222;
+      color: #fff;
       padding: 15px;
       text-align: center;
-      font-size: 24px;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
-      color: #ff4444;
     }
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      height: calc(100vh - 60px);
-    }
-    .sidebar {
-      background: #1c1c1c;
+    main {
       padding: 20px;
-      border-right: 1px solid #333;
     }
-    .content {
-      padding: 20px;
-      overflow-y: auto;
-    }
-    .card {
-      background: #222;
+    section {
+      background: #fff;
+      margin: 15px 0;
       padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <header>📊 Trade Finder Clone</header>
-  <div class="container">
-    <div class="sidebar">
-      <h3>Menu</h3>
-      <ul>
-        <li
-<!-- TradingView Widget Start -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_chart"></div>
-</div>
+  <header>
+    <h1>📊 Trade Finder Clone</h1>
+  </header>
+  
+  <nav>
+    <a href="#">Dashboard</a>
+    <a href="#">Scanners</a>
+    <a href="#">Watchlist</a>
+    <a href="#">Settings</a>
+  </nav>
 
-<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-<script type="text/javascript">
-  new TradingView.widget({
-    "width": "100%",
-    "height": 500,
-    "symbol": "BINANCE:BTCUSDT",  // default chart
-    "interval": "15",
-    "timezone": "Etc/UTC",
-    "theme": "dark",
-    "style": "1",
-    "locale": "en",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "hide_top_toolbar": false,
-    "save_image": false,
-    "container_id": "tradingview_chart"
-  });
-</script>
-<!-- TradingView Widget End -->
-<section>
-  <h2>📈 Top Gainers</h2>
-  <ul id="gainers-list">
-    <li>Loading...</li>
-  </ul>
+  <main>
+    <section>
+      <h2>Market Overview</h2>
+      <p>Yaha pe live market data ayega.</p>
+    </section>
 
-  <h2>📉 Top Losers</h2>
-  <ul id="losers-list">
-    <li>Loading...</li>
-  </ul>
-</section>
+    <section>
+      <h2>Scanner</h2>
+      <p>Top gainers / losers list yaha hogi.</p>
+    </section>
 
-<script>
-  async function fetchScanner() {
-    // Free API Example (CoinGecko)
-    const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false");
-    const data = await res.json();
-
-    let gainers = [...data].sort((a,b) => b.price_change_percentage_24h - a.price_change_percentage_24h).slice(0,3);
-    let losers = [...data].sort((a,b) => a.price_change_percentage_24h - b.price_change_percentage_24h).slice(0,3);
-
-    document.getElementById("gainers-list").innerHTML = gainers.map(c => `<li>${c.name} (${c.symbol.toUpperCase()}): ${c.price_change_percentage_24h.toFixed(2)}%</li>`).join("");
-    document.getElementById("losers-list").innerHTML = losers.map(c => `<li>${c.name} (${c.symbol.toUpperCase()}): ${c.price_change_percentage_24h.toFixed(2)}%</li>`).join("");
-  }
-
-  fetchScanner();
-</script>
-<nav style="background:#222; padding:10px; color:white;">
-  <a href="#" style="margin:10px; color:white;">Dashboard</a>
-  <a href="#" style="margin:10px; color:white;">Scanners</a>
-  <a href="#" style="margin:10px; color:white;">Watchlist</a>
-  <a href="#" style="margin:10px; color:white;">Settings</a>
-</nav>
+    <section>
+      <h2>Charts</h2>
+      <p>TradingView widget yaha embed hoga.</p>
+    </section>
+  </main>
+</body>
+</html>
