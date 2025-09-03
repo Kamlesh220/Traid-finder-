@@ -1,5 +1,4 @@
-{
-  "name": "traid-finder",
+name": "traid-finder",
   "version": "1.0.0",
   "description": "Trade Finder App",
   "main": "index.js",
