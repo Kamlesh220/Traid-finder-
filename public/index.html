@@ -73,3 +73,30 @@
   });
 </script>
 <!-- TradingView Widget End -->
+<section>
+  <h2>📈 Top Gainers</h2>
+  <ul id="gainers-list">
+    <li>Loading...</li>
+  </ul>
+
+  <h2>📉 Top Losers</h2>
+  <ul id="losers-list">
+    <li>Loading...</li>
+  </ul>
+</section>
+
+<script>
+  async function fetchScanner() {
+    // Free API Example (CoinGecko)
+    const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false");
+    const data = await res.json();
+
+    let gainers = [...data].sort((a,b) => b.price_change_percentage_24h - a.price_change_percentage_24h).slice(0,3);
+    let losers = [...data].sort((a,b) => a.price_change_percentage_24h - b.price_change_percentage_24h).slice(0,3);
+
+    document.getElementById("gainers-list").innerHTML = gainers.map(c => `<li>${c.name} (${c.symbol.toUpperCase()}): ${c.price_change_percentage_24h.toFixed(2)}%</li>`).join("");
+    document.getElementById("losers-list").innerHTML = losers.map(c => `<li>${c.name} (${c.symbol.toUpperCase()}): ${c.price_change_percentage_24h.toFixed(2)}%</li>`).join("");
+  }
+
+  fetchScanner();
+</script>
