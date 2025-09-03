@@ -1,24 +1,16 @@
 {
   "name": "traid-finder",
   "version": "1.0.0",
-  "description": "Trade Finder Clone",
+  "description": "Trade Finder App",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "engines": {
-    "node": ">=18.x"
-  },
-  "dependencies": {}
-}
-{
-  "name": "traid-finder",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm install"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
