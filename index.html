@@ -5,6 +5,11 @@
 </head>
 <body>
   <h1>🚀 Trade Finder Live!</h1>
-  <p>Aapka site GitHub Pages pe successfully chal raha hai.</p>
+  <p>Aapka site GitHub Pages pe successfully chal raha hai.</p><script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker Registered"));
+  }
+</script>
 </body>
 </html>
