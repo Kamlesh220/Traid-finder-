@@ -1,0 +1,63 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #121212; /* dark background */
+  color: #fff;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: #ff4d4d;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Main content */
+main {
+  padding: 20px;
+}
+
+h2 {
+  color: #ffd633;
+}
+
+/* Scanner box */
+.scanner {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Button */
+button {
+  background: #ff4d4d;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e60000;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  padding: 10px;
+  background: #1e1e1e;
+  color: #aaa;
+  font-size: 14px;
+}
